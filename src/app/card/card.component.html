@@ -1,1 +1,11 @@
-<p>card works!</p>
+<div class="col">
+    <div class="card" style="width: 18rem;">
+        <img [src]="user.img" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{user.name}}</h5>
+          <p class="card-text">{{user.description}}</p>
+          <a href="#" class="btn btn-primary" *ngIf="onValidate()" (click)="onSendData()">mostrar</a>
+        </div>
+      </div>
+</div>
+

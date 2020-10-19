@@ -1,25 +1,47 @@
 import { Component } from '@angular/core';
+import { IUser } from './interfaces/user.interface';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'first-angular-app';
-  imagen = "../assets/img/Batman.jpg";
-  items = [{name: 'daniel'}, {name: 'fabri'}]
-  private showText = true;
-  value = 1;
+  items: IUser[] = [
+    {
+      id: 0,
+      name: 'daniel',
+      description: 'Es un alumno',
+      img: '../../assets/img/f4.jpg',
+    },
+    {
+      id: 1,
+      name: 'javi',
+      description: 'Es un alumno',
+      img: '../../assets/img/Batman.jpg',
+    },
+    {
+      id: 2,
+      name: 'fabri',
+      description: 'Es un alumno',
+      img: '../../assets/img/chepe.jpg',
+    },
+    {
+      id: 3,
+      name: 'mario',
+      description: 'Es un alumno',
+      img: '../../assets/img/mario.jpg',
+    },
+    {
+      id: 4,
+      name: 'diego',
+      description: 'Es un alumno',
+      img: '../../assets/img/cod.png',
+    },
+  ];
 
-  onChangeImage(url: string){
-    this.imagen = url
-  }
-  onValidate(){
-    return this.showText
-  }
 
-  onChangeShow(){
-    this.showText = !this.showText
+  outUserMethod(user: IUser) {
+    console.log(user)
   }
 }

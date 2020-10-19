@@ -1,0 +1,77 @@
+<!-- pasar datos a un componente -->
+<app-componente 
+*ngFor="let item of items" 
+[user]="item"
+(outUser)="outUserMethod($event)"
+></app-componente>
+
+<!-- Esta mostrando -->
+<h1>Hola mundo {{title}}</h1>
+
+<!-- Esta afectando -->
+<input [(ngModel)]="title">
+
+<!-- Esta editando el campo -->
+<img [src]="imagen" alt="Batman" width="200px">
+
+<button (click)="onChangeImage('../assets/img/f4.jpg')">Cambiar Imagen</button>
+
+<button (click)="this.title = 'adios'">Adios </button>
+
+<!-- La directiva ngFor sirve para hacer componentes dinamicos -->
+<p *ngFor="let item of items; index as i">
+    {{ item.name }} = {{ i }}
+</p>
+
+<app-componente *ngFor="let item of items"></app-componente>
+
+<!-- la directiva ngIf oculta elementos -->
+<p *ngIf="onValidate()">
+    Hola mundo
+</p>
+
+<p *ngIf="!onValidate()">
+    Hola mundo oculto
+</p>
+
+<button (click)="onChangeShow()">
+    Mostrar
+</button>
+
+<!-- la directiva ng tambien tiene else -->
+
+<p *ngIf="onValidate(); else tplElse">
+    Hola mundo dfs
+</p>
+
+<ng-template #tplElse>
+    Hola otro Texto
+</ng-template>
+
+<!-- la directiva ngSwitch funciona tal cual como un switch -->
+<div [ngSwitch]="value">
+    <p *ngSwitchCase="1">Valor 1</p>
+    <p *ngSwitchCase="2">Valor 2</p>
+    <p *ngSwitchCase="3">Valor 3</p>
+    <p *ngSwitchCase="4">Valor 4</p>
+    <p *ngSwitchCase="5">Valor 5</p>
+    <p *ngSwitchCase="6">Valor 6</p>
+    <p *ngSwitchCase="7">Valor 7</p>
+</div>
+
+<!-- ngClass modifica o hace dinamico la clase en nuestro componente -->
+
+<p [ngClass]="{'color': addClass}">Hola</p>
+
+<button (click)="addClass = !addClass">
+    Cambiar clase
+</button>
+
+<!-- ng style modifica, tal cual el estilo -->
+
+<p [ngStyle]="{'background-color': addClass ? 'red' : 'blue'}">Hola</p>
+
+
+
+
+
