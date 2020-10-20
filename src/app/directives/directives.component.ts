@@ -13,6 +13,7 @@ export class DirectivesComponent implements OnInit {
   private showText = true;
   addClass = true;
   value = 1;
+  date= '19/10/2020'
   items: IUser[] = [
     {
       id: 0,
@@ -25,6 +26,24 @@ export class DirectivesComponent implements OnInit {
       name: 'javi',
       description: 'Es un alumno',
       img: '../../assets/img/Batman.jpg',
+    },
+    {
+      id: 2,
+      name: 'fabri',
+      description: 'Es un alumno',
+      img: '../../assets/img/chepe.jpg',
+    },
+    {
+      id: 3,
+      name: 'mario',
+      description: 'Es un alumno',
+      img: '../../assets/img/mario.jpg',
+    },
+    {
+      id: 4,
+      name: 'diego',
+      description: 'Es un alumno',
+      img: '../../assets/img/cod.png',
     },
   ];
 
